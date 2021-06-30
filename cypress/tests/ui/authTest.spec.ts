@@ -49,6 +49,7 @@ describe("User Sign-up and Login", function () {
     - If you don't do exercise #3, you can comment out the logout user code
     - But keep the logout user code if are able to complete Exercise #3 Onboarding
     */
+
     cy.visit("/");
 
     // Exercise 1: Sign-up User
@@ -67,7 +68,7 @@ describe("User Sign-up and Login", function () {
     // Exercise 2: Login User
     /* Use login in commands (in support folder), with username & password */
 
-    // Exercise 3 (Bonus): Onboarding
+    // Bonus Exercise: Onboarding
     /*
     1. Check visibility of onboarding dialog
     2. Check existence of top navigation notifications count
@@ -95,7 +96,7 @@ describe("User Sign-up and Login", function () {
   it("should display login errors", function () {
     cy.visit("/");
 
-    /* Additional Exercise: Login errors
+    /* Bonus Exercise: Login errors
     1. Check "Username is required" error
     2. Check "Password must contain at least 4 characters" error
     3. Check submit button is disabled if either or both username and password are empty
