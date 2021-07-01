@@ -33,6 +33,24 @@ describe("User Sign-up and Login", function () {
     cy.visualSnapshot("Redirect to SignIn");
   });
 
+  /*
+    Hints:
+    - cy.getBySel("<value in data-test attribute>") to get the DOM element by data-test attribute
+      Example: 
+          To get the DOM element for username in this HTML using the data-test attribute
+            <div class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth" data-test="signin-username">
+
+          You can call it this way: cy.getBySel("signin-username")
+            
+    - Use implemented functions in commands.ts like login that you can call directly like cy.login(..)
+
+    - Pre-defined cy.route can be reused and used in cy.wait("@<routeAlias>")
+      Example:
+        cy.route("POST", "/users").as("signup");
+        We can use the alias "signup" in our cy.wait instead of timevalue like : cy.wait("@signup")
+
+  */
+
   it("should allow a visitor to sign-up, login, and logout", function () {
     const userInfo = {
       firstName: "Bob",
@@ -40,15 +58,6 @@ describe("User Sign-up and Login", function () {
       username: "PainterJoy90",
       password: "s3cret",
     };
-
-    /*
-    Hints:
-    - Use cy.getBySel("<value in data-test>") in CSS to get the selector
-    - Use implemented functions in commands.ts like login that you can call directly like cy.login...
-    - Pre-defined cy.route can be reused and used in cy.wait("@<routeAlias>")
-    - If you don't do exercise #3, you can comment out the logout user code
-    - But keep the logout user code if are able to complete Exercise #3 Onboarding
-    */
 
     cy.visit("/");
 
@@ -66,7 +75,7 @@ describe("User Sign-up and Login", function () {
     */
 
     // Exercise 2: Login User
-    /* Use login in commands (in support folder), with username & password */
+    /* Use login in commands (in support folder), with username & password to login to the app*/
 
     // Bonus Exercise: Onboarding
     /*
@@ -78,19 +87,12 @@ describe("User Sign-up and Login", function () {
     6. Enter account number - 123456789
     7. Enter routing number - 987654321
     8. Click on submit button
-    9. Add cy.wait with createBankAccount route
+    9. Add cy.wait with createBankAccount route alias
     10. Check on dialog title  - "Finished"
     11. Check on dialog content - "You're all set!"
     12. Click on next button
     13. Check if transaction list is available
     */
-
-    //Logout User
-    // if (isMobile()) {
-    //   cy.getBySel("sidenav-toggle").click();
-    // }
-    // cy.getBySel("sidenav-signout").click();
-    // cy.location("pathname").should("eq", "/signin");
   });
 
   it("should display login errors", function () {
