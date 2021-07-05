@@ -75,7 +75,12 @@ describe("User Sign-up and Login", function () {
     */
 
     // Exercise 2: Login User
-    /* Use login in commands (in support folder), with username & password to login to the app*/
+    /* 
+       - Use login in commands (in support folder), with username & password to login to the app
+       - If you don't succeed to do exercise 1, use the following username and password:
+            username: Katharina_Bernier
+            password: s3cret
+    */
 
     // Bonus Exercise: Onboarding
     /*
